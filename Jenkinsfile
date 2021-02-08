@@ -35,7 +35,7 @@ pipeline{
 		stage('sonarqube'){
 			steps{
 					withGradle{
-						configFileProvider([configFile(fileId:'sonarqube-gradle.properties',
+						configFileProvider([configFile(fileId:'sonarqubeProperties',
                 		targerLocation:'gradle.properties')])
 						
 						{
