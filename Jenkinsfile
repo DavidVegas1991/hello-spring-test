@@ -27,6 +27,20 @@ pipeline{
 					
 					recordIssues enabledForFailure: true,
 					tool: pmdParser(pattern: 'build/reports/pmd/*.xml')
+
+				}
+			}
+		}
+		stage('spotbugs'){
+			steps{
+				withGradle{
+					sh './gradlew check'
+				}
+			}
+			always{
+				recordIssues{
+					enabledForFailure = true,
+					tool: [java(), spotbugs (pattern: 'build/reports/spotbugs/*.xml', reportEncoding: 'UTF-8')]
 				}
 			}
 		}	
