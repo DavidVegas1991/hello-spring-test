@@ -10,7 +10,8 @@ pipeline{
 			post{
 				always{
 					junit 'build/test-results/test/TEST-*.xml'
-					
+					recordIssues enabledForFailure: true,
+					tool: spotBugs(pattern: 'build/reports/spotbugs/*.xml')
 				}
 			}
 	
