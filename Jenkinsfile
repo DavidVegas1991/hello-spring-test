@@ -30,21 +30,6 @@ pipeline{
 
 				}
 			}
-		}
-		stage('spotbugs'){
-			steps{
-				withGradle{
-					sh './gradlew check'
-				}
-			}
-			post{
-				always{
-					recordIssues enabledForFailure = true,
-					tool: [java(), spotbugs (pattern: 'build/reports/spotbugs/*.xml', reportEncoding: 'UTF-8')]
-				
-				}
-			}
-			
 		}	
 	
 	}
