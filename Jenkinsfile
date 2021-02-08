@@ -35,8 +35,8 @@ pipeline{
 		stage('sonarqube'){
 			steps{
 					withGradle{
-						configFileProvider([configFile(fileId:'sonarqubeProperties',
-                		targerLocation:'gradle.properties')])
+						configFileProvider([configFile(fileId:'hello-spring-testin-gradle.properties',		
+						targetLocation:'gradle.properties')])
 						
 						{
 							sh './gradlew sonarqube'			
