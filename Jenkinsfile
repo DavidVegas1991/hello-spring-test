@@ -38,10 +38,9 @@ pipeline{
 				}
 			}
 			always{
-				recordIssues{
-					enabledForFailure = true,
+				recordIssues enabledForFailure = true,
 					tool: [java(), spotbugs (pattern: 'build/reports/spotbugs/*.xml', reportEncoding: 'UTF-8')]
-				}
+				
 			}
 		}	
 	
