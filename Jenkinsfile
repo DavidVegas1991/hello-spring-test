@@ -35,7 +35,7 @@ pipeline{
 		stage('sonarqube'){
 			steps{
 					withGradle{
-						configFileProvider([configFile(fileId: 'gradle.properties')])
+						configFileProvider([configFile(fileId: 'gradle.properties', variable: 'systemProp.sonar.host.url' 'systemProp.sonar.login', 'systemProp.sonar.password')])
 						{
 							sh './gradlew clean sonarqube'			
 						}
