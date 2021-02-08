@@ -16,7 +16,7 @@ pipeline {
                     junit 'build/test-results/**/TEST-*.xml'
 	            recordIssues(
 			enabledForFailure: true, aggregatingResults: true,
-			tools: [java(), checkStyle(pattern: 'build/reports/checkstyle/checkstyle.xml', reportEncoding: 'UTF-8')]
+			tools: [java(), checkStyle(pattern: 'config/checkstyle/checkstyle.xml', reportEncoding: 'UTF-8')]
 		    )
 
                     
