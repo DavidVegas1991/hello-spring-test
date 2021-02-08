@@ -17,9 +17,12 @@ pipeline{
 	
 		}
 		stage('QA'){
-			withGradle{
-				sh './gradlew check'
+			steps{
+				withGradle{
+					sh './gradlew check'
+				}
 			}
+			
 			post{
 				always{
 					junit 'build/test-results/test/TEST-*.xml'
