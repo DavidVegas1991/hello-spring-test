@@ -5,6 +5,7 @@ plugins {
 	id 'info.solidsoft.pitest' version '1.5.1'
 	id 'checkstyle'
 	id 'pmd'
+	id 'com.github.spotbugs' version '4.6.0'
 }
 
 group = 'com.example'
@@ -20,7 +21,7 @@ dependencies {
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
-	spotbugsPlugins 'com.h3xstream.findsecbugs:finsecbugs-plugin:1-10.1'
+	spotbugsPlugins 'com.h3xstream.findsecbugs:findsecbugs-plugin:1.10.1'
 }
 
 test {
@@ -41,5 +42,5 @@ pmd{
 	ignoreFailures = true
 } 
 spotbugs{
-	toolVersion = '4.2.1'
+	ignoreFailures = true	
 }
