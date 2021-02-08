@@ -35,11 +35,11 @@ pipeline{
 		stage('sonarqube'){
 			steps{
 					withGradle{
-						configFileProvider([configFile(fileId:'gradlesonarQube',
+						configFileProvider([configFile(fileId:'sonarqube-gradle.properties',
                 		targerLocation:'gradle.properties')])
 						
 						{
-							sh './gradlew clean sonarqube'			
+							sh './gradlew sonarqube'			
 						}
 							
 					}
