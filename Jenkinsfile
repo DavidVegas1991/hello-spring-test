@@ -34,19 +34,15 @@ pipeline{
 		}	
 		stage('sonarqube'){
 			steps{
-					withGradle{
-						configFileProvider([configFile(fileId: 'f7142cd7-9600-4ff9-a3fb-bc18db7c2a23',
-						 targetLocation: 'gradle.properties')]) 
-    // some block
-
-						
-						{
-							sh './gradlew sonarqube'			
-						}
-							
-					}
+					stage('sonarqube credentials'){
+			                withSonarQubeEnv(credentialsId: 'e8ebb9a1-7ea1-42ba-aaa5-76978e6bb86b', installationName: 'local') 
+                            {
+					            sh './gradlew sonarqube'		
+				            }
+		            }
 			}
 		}
+
 	
 	}
 }
