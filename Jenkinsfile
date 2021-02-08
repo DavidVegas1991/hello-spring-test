@@ -34,12 +34,12 @@ pipeline{
 		}	
 		stage('sonarqube'){
 			steps{
-					stage('sonarqube credentials'){
+					
 			                withSonarQubeEnv(credentialsId: 'e8ebb9a1-7ea1-42ba-aaa5-76978e6bb86b', installationName: 'local') 
                             {
 					            sh './gradlew sonarqube'		
 				            }
-		            }
+		            
 			}
 		}
 
