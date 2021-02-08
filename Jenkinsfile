@@ -30,19 +30,7 @@ pipeline{
 					tool: pmdParser(pattern: 'build/reports/pmd/*.xml')
 				}
 			}
-		}
-		stage('Build'){
-			steps{
-				withGradle{
-					sh './gradlew assemble'
-				}
-			}
-			post{
-				success{
-					archiveArtifacts 'build/libs/*.jar'
-				}
-			}
-		}		
+		}	
 	
 	}
 }
