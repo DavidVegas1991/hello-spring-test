@@ -39,7 +39,7 @@ pipeline{
 			}
 			post{
 				always{
-					dependencyCheckPublisher pattern: 'build/reports/owasp/*.json'
+					dependencyCheckPublisher pattern: 'build/reports/owasp/dependency-check-report.json'
 				}
 			}
 		}

@@ -49,6 +49,6 @@ spotbugs{
 
 
 dependencyCheck {
-       autoUpdate=false
+       autoUpdate=true
        format='JSON'
 }
