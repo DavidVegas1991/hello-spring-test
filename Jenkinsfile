@@ -35,11 +35,10 @@ pipeline{
 		
 		stage('owaps'){
 			
-			post{
-				always{
+			steps{
 					dependencyCheckPublisher pattern: 'build/reports/dependency-check-report.json'
-				}
 			}
+			
 		}
 	
 	}
