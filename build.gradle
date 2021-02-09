@@ -23,7 +23,7 @@ dependencies {
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
-	classpath "org.owasp:dependency-check-gradle:6.1.0"
+
 	
 }
 

@@ -36,6 +36,7 @@ pipeline{
 		stage('owaps'){
 			
 			steps{
+				sh './gradlew clean dependencyCheckAnalyze'
 				dependencyCheck additionalArguments: ''' 
                     -o "./" 
                     -s "./"

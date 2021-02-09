@@ -1,8 +1,0 @@
-com/example/testingweb/TestingWebApplication.java
- com.example.testingweb.TestingWebApplication
-com/example/testingweb/HomeController.java
- com.example.testingweb.HomeController
-com/example/testingweb/GreetingService.java
- com.example.testingweb.GreetingService
-com/example/testingweb/GreetingController.java
- com.example.testingweb.GreetingController
