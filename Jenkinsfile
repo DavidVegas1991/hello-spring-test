@@ -34,12 +34,10 @@ pipeline{
 		}	
 		
 		stage('owaps'){
-			steps{
-				sh './gradlew dependencyCheckAnalyze'
-			}
+			
 			post{
 				always{
-					dependencyCheckPublisher pattern: 'build/reports/owasp/dependency-check-report.json'
+					dependencyCheckPublisher pattern: 'build/reports/dependency-check-report.json'
 				}
 			}
 		}
