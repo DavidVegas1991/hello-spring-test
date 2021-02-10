@@ -70,8 +70,8 @@ publishing{
 	        credentials {
 	           // name = 'Private-Token'
 	            // value = System.getenv('TOKEN')
-			username System.getenv('user')
-			password System.getenv('pass')
+			username = System.getenv('user')
+			password = System.getenv('pass')
 			
 	        }
 	        
