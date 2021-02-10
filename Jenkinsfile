@@ -46,7 +46,11 @@ pipeline{
 
 		stage('publish'){
 			steps{
-				withCredentials([string(credentialsId: 'gitLabPrivateToken', variable: 'TOKEN')]){
+				
+				//withCredentials([string(credentialsId: 'gitLabPrivateToken', variable: 'TOKEN')]){
+				//	sh './gradlew publish'
+				//}
+				withCredentials([usernamePassword(credentialsId: 'ApacheArchiva', passwordVariable: 'Password', usernameVariable: 'user')]){
 					sh './gradlew publish'
 				}
 			}

@@ -64,15 +64,19 @@ publishing{
 	}
 	repositories {
 	    maven {
-	        url "http://10.250.16.1:8929/api/v4/projects/10/packages/maven"
-	        name "GitLab"
-	        credentials(HttpHeaderCredentials) {
-	            name = 'Private-Token'
-	            value = System.getenv('TOKEN')
+		url "http://localhost:9082/repository/snapshots/"
+		
+	        
+	        credentials {
+	           // name = 'Private-Token'
+	            // value = System.getenv('TOKEN')
+			username = user
+			password = pass
+			
 	        }
-	        authentication {
-	            header(HttpHeaderAuthentication)
-	        }
+	        
+	        
+	        
 	    }
 	}
 
