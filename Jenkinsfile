@@ -50,7 +50,7 @@ pipeline{
 				//withCredentials([string(credentialsId: 'gitLabPrivateToken', variable: 'TOKEN')]){
 				//	sh './gradlew publish'
 				//}
-				withCredentials([usernamePassword(credentialsId: 'ApacheArchiva', passwordVariable: 'Password', usernameVariable: 'user')]){
+				withCredentials([usernamePassword(credentialsId: 'ApacheArchiva', passwordVariable: 'pass', usernameVariable: 'user')]){
 					sh './gradlew publish'
 				}
 			}
